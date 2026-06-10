@@ -7,10 +7,15 @@ workflows:
       node: 22
 
     scripts:
-      - xcodebuild
-      - npx cap sync ios
-      - xcodebuild -workspace ios/App/App.xcodeproj/project.xcworkspace -scheme App -configuration Release -sdk iphonesimulator build
+      #!/usr/bin/env bash
 
+xcodebuild \
+-project Sihhatk.xcodeproj \
+-scheme Sihhatk \
+-sdk iphonesimulator \
+-configuration Debug \
+CODE_SIGNING_ALLOWED=NO \
+CODE_SIGNING_REQUIRED=NO
     artifacts:
       - ios/**/*.app
       - ios/**/*.ipa
