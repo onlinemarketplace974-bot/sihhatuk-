@@ -9,7 +9,7 @@ workflows:
     scripts:
       - xcodebuild
       - npx cap sync ios
-      - xcodebuild -workspace ios/App/App.xcodeproj/project.xcworkspace -scheme App -configuration Release -sdk iphoneos build
+      - xcodebuild -workspace ios/App/App.xcodeproj/project.xcworkspace -scheme App -configuration Release -sdk iphonesimulator build
 
     artifacts:
       - ios/**/*.app
